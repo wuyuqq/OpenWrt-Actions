@@ -23,6 +23,7 @@ on:
         default: "5.15.1_6.1.1"
         type: choice
         options:
+          - 5.15.148_6.1.78
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
           - 5.4.1
@@ -137,7 +138,7 @@ jobs:
           PACKAGE_SOC: ${{ inputs.openwrt_soc }}
           KERNEL_REPO_URL: ${{ inputs.kernel_repo }}
           KERNEL_VERSION_NAME: ${{ inputs.openwrt_kernel }}
-          KERNEL_AUTO_LATEST: false
+          KERNEL_AUTO_LATEST: ${{ inputs.auto_kernel }}
           SCRIPT_DIY_PATH: ${{ inputs.script_diy_path }}
           WHOAMI: ${{ inputs.builder_name }}
 
