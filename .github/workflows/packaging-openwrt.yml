@@ -43,7 +43,7 @@ on:
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
-        default: true
+        default: false
         type: boolean
       script_diy_path:
         description: "Set custom script loading path"
@@ -60,7 +60,7 @@ on:
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
-        default: "ophub"
+        default: "wuyuqq"
         type: choice
         options:
           - wuyuqq
