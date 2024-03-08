@@ -25,7 +25,6 @@ on:
         options:
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
-          - 5.15.148_6.1.78
           - 5.4.1
           - 5.10.1
           - 5.15.1
@@ -63,9 +62,9 @@ on:
         default: "ophub"
         type: choice
         options:
+          - wuyuqq
           - ophub
           - angel
-          - wuyuqq
 
 env:
   TZ: America/New_York
@@ -133,12 +132,12 @@ jobs:
         uses: ophub/flippy-openwrt-actions@main
         if: ${{ steps.download.outputs.status }} == 'success' && !cancelled()
         env:
-          OPENWRT_ARMVIRT: https://github.com/wuyuqq/OpenWrt-Actions/releases/download/OpenWrt_lede/openwrt-armvirt-64-generic-rootfs.tar.gz
+          OPENWRT_ARMVIRT: https://github.com/wuyuqq/OpenWrt-Actions/releases/download/openwrt_rootfs/openwrt-armvirt-64-generic-rootfs.tar.gz
           SELECT_PACKITPATH: openwrt_packit
           PACKAGE_SOC: ${{ inputs.openwrt_soc }}
           KERNEL_REPO_URL: ${{ inputs.kernel_repo }}
           KERNEL_VERSION_NAME: ${{ inputs.openwrt_kernel }}
-          KERNEL_AUTO_LATEST: ${{ inputs.auto_kernel }}
+          KERNEL_AUTO_LATEST: false
           SCRIPT_DIY_PATH: ${{ inputs.script_diy_path }}
           WHOAMI: ${{ inputs.builder_name }}
 
@@ -146,7 +145,7 @@ jobs:
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: openwrt_n1
+          tag: OpenWrt_N1
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           removeArtifacts: false
