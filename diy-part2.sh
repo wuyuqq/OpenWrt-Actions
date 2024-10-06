@@ -36,8 +36,8 @@
 # Add luci-app-ddns-go
 # git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 # Add luci-theme-argon
-# rm -rf feeds/luci/themes/luci-theme-argon
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 # Add luci-app-autotimeset
 # git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #
