@@ -41,8 +41,6 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 # Add luci-app-autotimeset
 # git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #
-git clone  https://github.com/immortalwrt/homeproxy.git package/homeproxy
-git clone  https://github.com/morytyann/OpenWrt-mihomo.git package/OpenWrt-mihomo
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
